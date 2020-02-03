@@ -1,0 +1,81 @@
+html {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+   padding: 0px;
+   margin: 0px; 
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+.NavBar {
+    width: 100%;
+    height: 45px;
+    background: rgb(0, 0, 0);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.NavBar__Center {
+    color: rgb(216, 216, 216);
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.Scrolling__Snap {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-top: 45px;
+    flex-basis: 100vw;
+    -webkit-overflow-scrolling: touch;
+}
+
+.Scrolling__Snap__Element {
+    display: inline-block;
+    scroll-snap-align: center;
+    text-align: center;
+    width: 100vw;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.NavBar__Links {
+    width: 100%;
+    float: right;
+    padding-right: 30px;
+}
+
+.NavBar__Links li {
+    float: right;
+    display: inline;
+}
+
+.NavBar__Links li a:link {
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    text-decoration: none;
+    color: rgb(168, 168, 168);
+    transition: color 0.4s;
+}
+
+.NavBar__Links li a:visited {
+    color:rgb(168, 168, 168);
+}
+
+.NavBar__Links li a:hover {
+    color: rgb(216, 216, 216);
+}
+
+.NavBar__Links li:not(:last-child) {
+    margin-left: 30px;
+}
