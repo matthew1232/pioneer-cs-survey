@@ -1,11 +1,15 @@
 html {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
    padding: 0px;
    margin: 0px; 
+   height: 100%;
+   background: black;
 }
 
 .preload * {
@@ -18,36 +22,50 @@ body {
 .NavBar {
     width: 100%;
     height: 45px;
-    background: rgb(0, 0, 0);
+    background: rgb(233, 233, 233);
     position: fixed;
     top: 0px;
+    z-index: 200;
     left: 0px;
     display: flex;
     align-items: center;
 }
 
 .NavBar__Center {
-    color: rgb(216, 216, 216);
+    color: rgb(74, 74, 74);
     font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     font-weight: 300;
     margin-left: 15px;
 }
 
 .Scrolling__Snap {
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    white-space: nowrap;
-    padding-top: 45px;
-    flex-basis: 100vw;
-    -webkit-overflow-scrolling: touch;
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    scroll-snap-align: center;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: 100vh;
+    scroll-snap-type: y proximity;
 }
 
 .Scrolling__Snap__Element {
-    display: inline-block;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     text-align: center;
-    width: 100vw;
+    padding-top: 50px;
+    width: 100vw; 
+    margin-top: 10px;
+    min-height: 100vh;
     font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.Scrolling__Snap__Element.Light {
+    background: rgb(233, 233, 233);
+}
+
+.Scrolling__Snap__Element:not(:last-child){
+    margin-bottom: 10px;
 }
 
 .NavBar__Links {
@@ -64,18 +82,133 @@ body {
 .NavBar__Links li a:link {
     font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     text-decoration: none;
-    color: rgb(168, 168, 168);
+    color: rgb(92, 92, 92);
     transition: color 0.4s;
 }
 
 .NavBar__Links li a:visited {
-    color:rgb(168, 168, 168);
+    color:rgb(92, 92, 92);
 }
 
 .NavBar__Links li a:hover {
-    color: rgb(216, 216, 216);
+    color: rgb(46, 46, 46);
 }
 
 .NavBar__Links li:not(:last-child) {
     margin-left: 30px;
+}
+
+.Snap__Title {
+    color: rgb(223, 223, 223);
+    font-weight: 400;
+    font-size: 40px;
+    font-weight: 350;
+    margin-bottom: 12px;
+}
+
+.Snap__Title.Black {
+    color: rgb(74, 74, 74);
+}
+
+.Questions {
+    position: relative;
+    text-align: left;
+    left: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.Questions__Element {
+    color: #fff;
+    font-weight: 350;
+    margin-top: 30px;
+}
+
+.Question__Explanation {
+    color: rgb(189, 189, 189);
+    margin: 0px;
+    padding: 0px;
+    font-weight: 300;
+    margin-top: 4px;
+    font-size: 19px;
+    width: 50ch;
+}
+
+.Question__Title {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0px;
+    margin-bottom: 10px;
+    background: rgb(233, 233, 233);
+    border-radius: 5px;
+    color: rgb(74, 74, 74);
+}
+
+.Snap__Claim {
+    color: #fff;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Snap__Claim.Black {
+    color:  rgb(92, 92, 92);
+}
+
+.Image__Centered {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+.Image__Left {
+    float: left;
+    margin-left: 20px;
+}
+
+#skipping-school-explanation {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.Snap__Explanation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Snap__Explanation__Text {
+    color: rgb(189, 189, 189);
+    margin: 0px;
+    padding: 0px;
+    font-weight: 300;
+    margin-top: 4px;
+    font-size: 19px;
+    width: 50ch;
+}
+
+.Snap__Explanation__Alt {
+    color: rgb(189, 189, 189);
+    margin: 0px;
+    padding: 0px;
+    font-weight: 300;
+    margin-top: 4px;
+    font-size: 15px;
+    width: 70ch;
+    font-style: italic;
+}
+
+.Black {
+    color: rgb(74, 74, 74);
+}
+
+.Explanation__Source:link {
+    color: rgb(189, 189, 189);
+}
+
+.Explanation__Source:visited {
+    color: rgb(189, 189, 189);
 }
